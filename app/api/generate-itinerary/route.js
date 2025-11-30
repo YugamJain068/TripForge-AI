@@ -114,7 +114,7 @@ function validateItinerary(parsedItinerary, expectedDays, departure) {
 
 async function generateAndValidateItinerary(prompt, expectedDays, departure, maxRetries = 3) {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+    const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-flash-lite" });
     const result = await model.generateContent(prompt);
     const response = result.response;
     const text = await response.text();
